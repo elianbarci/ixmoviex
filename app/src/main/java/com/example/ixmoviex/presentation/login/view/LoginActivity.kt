@@ -10,6 +10,8 @@ import com.example.ixmoviex.presentation.login.LoginContract
 import com.example.ixmoviex.presentation.login.presenter.LoginPresenter
 import com.example.ixmoviex.presentation.main.view.MainActivity
 import com.example.ixmoviex.presentation.registration.view.RegistrationActivity
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : BaseActivity(), LoginContract.LoginView {
@@ -59,6 +61,7 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
     override fun navigateToMain() {
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK     //Esto hace que se destruya la pestaña de login y se establezca la nueva proxima pestaña como la "Main"
+        intent.putExtra("User", FirebaseAuth.getInstance().uid)
         startActivity(Intent(this, MainActivity::class.java))                  //Una actividad normalmente va a iniciar con in
         startActivity(intent)
     }
