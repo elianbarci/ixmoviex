@@ -8,7 +8,7 @@ interface LoginContract {
         fun hideProgressBar()
         fun signIn()
         fun navigateToMain()
-        fun navigateToRegister()
+        fun navigateToRegistration()
     }
 
     interface LoginPresenter{
