@@ -37,7 +37,6 @@ class RegistrationActivity:BaseActivity(), RegistrationContract.RegistrationView
     }
 
     override fun signUp() {
-
         val email = etxt_mail_register.text.toString().trim()
         val fullname = etxt_fullname_register.text.toString().trim()
         val pass1 = etxt_pass_1_register.text.toString().trim()
@@ -67,7 +66,6 @@ class RegistrationActivity:BaseActivity(), RegistrationContract.RegistrationView
 
 
         presenter.signUp(fullname,email, pass1)
-
     }
 
     override fun showProgress() {
@@ -78,7 +76,6 @@ class RegistrationActivity:BaseActivity(), RegistrationContract.RegistrationView
     override fun hideProgress() {
         progressBar_register.visibility = View.GONE
         button_register.visibility = View.VISIBLE
-
     }
 
     override fun showError(errormsg: String) {

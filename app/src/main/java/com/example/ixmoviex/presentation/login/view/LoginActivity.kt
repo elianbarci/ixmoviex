@@ -10,7 +10,6 @@ import com.example.ixmoviex.presentation.login.LoginContract
 import com.example.ixmoviex.presentation.login.presenter.LoginPresenter
 import com.example.ixmoviex.presentation.main.view.MainActivity
 import com.example.ixmoviex.presentation.registration.view.RegistrationActivity
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,16 +54,14 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
         } else {
             presenter.signInUserWithEmailAndPassword(email,password)
         }
-
     }
 
     override fun navigateToMain() {
-        val intent = Intent(this, MainActivity::class.java)
+        var intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK     //Esto hace que se destruya la pestaña de login y se establezca la nueva proxima pestaña como la "Main"
-        intent.putExtra("User", FirebaseAuth.getInstance().uid)
-        startActivity(Intent(this, MainActivity::class.java))                  //Una actividad normalmente va a iniciar con in
+        intent.putExtra("User", FirebaseAuth.getInstance().uid.toString())
         startActivity(intent)
-    }
+}
 
     override fun onDestroy() {                  //¿Porque son necesarios estos metodos?
         super.onDestroy()
@@ -79,8 +76,8 @@ class LoginActivity : BaseActivity(), LoginContract.LoginView {
     override fun navigateToRegistration(){
         val intent = Intent(this, RegistrationActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK     //Esto hace que se destruya la pestaña de login y se establezca la nueva proxima pestaña como la "Main"
-        startActivity(Intent(this, RegistrationActivity::class.java))                  //Una actividad normalmente va a iniciar con in
-        startActivity(intent)
+        this.startActivity(Intent(this, RegistrationActivity::class.java))                  //Una actividad normalmente va a iniciar con in
+        this.startActivity(intent)
     }
 
 }
