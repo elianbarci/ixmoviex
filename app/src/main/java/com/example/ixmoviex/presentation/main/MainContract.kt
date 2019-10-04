@@ -1,6 +1,7 @@
 package com.example.ixmoviex.presentation.main
 
 import android.widget.TextView
+import com.example.ixmoviex.base.BaseActivity
 import com.example.ixmoviex.presentation.login.LoginContract
 
 interface MainContract {
@@ -10,7 +11,7 @@ interface MainContract {
         fun showProgress()
         fun hideProgress()
         fun showError(msgError: String)
-        fun logout()
+        fun getLayout(): Int
     }
 
     interface MainPresenter {

@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<group android:checkableBehavior="single" >
-    <item
-        android:id="@+id/nav_notifications"
-        android:checkable="true"
-        android:checked="false"
-        android:enabled="true"
-        android:icon="@drawable/baseline_trending_up_black_18dp"
-        android:title="@string/nav_notifications"
-        android:visible="true" />
-    <item
-        android:id="@+id/nav_user"
-        android:checkable="true"
-        android:checked="false"
-        android:enabled="true"
-        android:icon="@drawable/baseline_face_black_18dp"
-        android:title="@string/nav_user"
-        android:visible="true" />
-    <item
-        android:id="@+id/nav_home"
-        android:checkable="true"
-        android:checked="true"
-        android:enabled="true"
-        android:icon="@drawable/baseline_home_black_18dp"
-        android:title="@string/nav_home"
-        android:visible="true" />
-    <item
-        android:id="@+id/nav_movements"
-        android:checkable="true"
-        android:enabled="true"
-        android:icon="@drawable/baseline_swap_vertical_circle_black_18dp"
-        android:title="@string/movimientos"
-        android:visible="true" />
-    <item
-        android:id="@+id/nav_account"
-        android:checkable="true"
-        android:enabled="true"
-        android:icon="@drawable/baseline_book_black_18dp"
-        android:title="@string/cuenta"
-        android:visible="true" />
-</group>
+    <group
+        android:id="@+id/nav_bar"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notifications"
+            android:checkable="true"
+            android:checked="false"
+            android:enabled="true"
+            android:icon="@drawable/baseline_trending_up_black_18dp"
+            android:title="@string/nav_notifications"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_user"
+            android:checkable="true"
+            android:checked="false"
+            android:enabled="true"
+            android:icon="@drawable/baseline_face_black_18dp"
+            android:title="@string/nav_user"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_home"
+            android:checkable="true"
+            android:checked="true"
+            android:enabled="true"
+            android:icon="@drawable/baseline_home_black_18dp"
+            android:title="@string/nav_home"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_movements"
+            android:checkable="true"
+            android:checked="false"
+            android:enabled="true"
+            android:icon="@drawable/baseline_swap_vertical_circle_black_18dp"
+            android:title="@string/movimientos"
+            android:visible="true" />
+        <item
+            android:id="@+id/nav_account"
+            android:checkable="true"
+            android:checked="false"
+            android:enabled="true"
+            android:icon="@drawable/baseline_book_black_18dp"
+            android:title="@string/cuenta"
+            android:visible="true" />
+    </group>
 </menu>

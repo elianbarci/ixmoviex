@@ -20,7 +20,7 @@ public class MainInteractorImpl implements MainInteractor {
 
     public void bringDataApi(@NotNull TextView textViewResult, @NotNull final String user, @NotNull MainCallback listener) {
 
-        textViewResult = textViewResult.findViewById(R.id.text_view_result);
+        textViewResult = textViewResult.findViewById(R.id.result_text_view);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
